@@ -3,7 +3,7 @@
 import React from "react";
 import {
   FaNodeJs,
-  FaCubes,     
+  FaCubes,
 } from "react-icons/fa";
 import {
   SiExpress,
@@ -15,9 +15,25 @@ import {
 import { cn } from "../../lib/utils";
 
 export const BackendSkills = () => {
-  const radius = 180;
-  const size = 60;
-  const padding = 40;
+  const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 1024;
+
+  let radius = 130;
+  let size = 50;
+  let padding = 30;
+
+  if (screenWidth <= 320) {
+    radius = 110;
+    size = 30;
+    padding = 20;
+  } else if (screenWidth <= 412) {
+    radius = 115;
+    size = 30;
+    padding = 40;
+  } else if (screenWidth <= 520) {
+    radius = 115;
+    size = 30;
+    padding = 40;
+  }
 
   const toRadians = (deg) => (Math.PI / 180) * deg;
 
@@ -95,8 +111,8 @@ export const BackendSkills = () => {
           })}
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex items-center justify-center w-1/2 border-2 rounded-full shadow-inner h-1/2 ">
-            <span className="px-4 text-2xl text-center sm:text-3xl text-foreground">
+          <div className="flex items-center justify-center xxs:w-[100px] xxs:h-[100px]  xs:w-[120px] xs:h-[120px]   border-2 rounded-full shadow-inner  ">
+            <span className=" text-xl text-center xxs:font-semibold tracking-wider xxs:text-[15px] xs:text-lg sm:text-xl text-foreground">
               BACKEND
             </span>
           </div>

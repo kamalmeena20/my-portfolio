@@ -12,30 +12,10 @@ import { SiTelegram, SiSnapchat } from "react-icons/si";
 
 import { useAnimate } from "framer-motion";
 
-const ClipPathLinks = () => {
+const Clippath = () => {
     return (
-        <div className="flex flex-col items-center justify-center w-full min-h-screen px-4 py-12 text-center transition-colors duration-300 text-foreground">
-
-            {/* Heading */}
-            <div className="mb-6">
-                <p className="text-sm text-muted dark:text-muted">Get in Touch</p>
-                <h1 className="text-4xl font-bold">Contact Me</h1>
-            </div>
-
-            {/* Waitlist Input */}
-            <div className="flex items-center w-full max-w-md p-1 mb-10 rounded-full border border-[#009E66] bg-transparent">
-                <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-4 py-2 text-white bg-transparent border-none rounded-full placeholder-muted-foreground focus:outline-none"
-                />
-                <button className="px-5 py-2 font-semibold text-white transition bg-[#009E66] rounded-full hover:brightness-110">
-                    Join Me
-                </button>
-            </div>
-
-
-            <div className="border border-[#009E66] divide-y divide-[#009E66] w-full max-w-6xl overflow-hidden">
+        <>
+            <div className="border border-[#009E66] divide-y divide-[#009E66] w-full max-w-6xl overflow-hidden m-8">
                 {/* Row 1: 2 icons */}
                 <div className="grid grid-cols-2 divide-x divide-[#009E66]">
                     <LinkBox Icon={FaEnvelope} href="mailto:officalkamalmeena2005@gmail.com" />
@@ -58,12 +38,11 @@ const ClipPathLinks = () => {
                     <LinkBox Icon={FaFacebook} href="https://facebook.com" />
                 </div>
             </div>
-            <p className="mt-10 text-sm text-center text-muted-foreground dark:text-muted-foreground">
+            <p className="text-white w-full h-10 flex justify-center items-center text-md text-center bg-[#009e66]">
                 © {new Date().getFullYear()} Kamal Meena. All rights reserved.
             </p>
 
-
-        </div>
+        </>
     );
 };
 
@@ -132,4 +111,4 @@ const LinkBox = ({ Icon, href }) => {
     );
 };
 
-export default ClipPathLinks;
+export default Clippath;

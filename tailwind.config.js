@@ -7,10 +7,26 @@ export default {
 	],
 	theme: {
 		extend: {
+			screens: {
+				'xxs': '320px',
+				'xs': '412px',
+				'xsm': '512px',
+			},
+			fontFamily: {
+				dalton: ['DaltonWhite', 'cursive'],
+				signature: ['Signature', 'cursive'],
+				amsterdam: ['AmsterdamHandwriting', 'cursive'],
+
+			},
+			transform: {
+				'preserve-3d': 'preserve-3d',
+				'backface-hidden': 'backface-visibility: hidden',
+			},
+
 			animation: {
+				beam: 'beamAnim 1.5s linear infinite',
 				'spin-slow': 'spin 20s linear infinite',
 				'spin-reverse': 'spin-reverse 20s linear infinite',
-				// ✅ NEW animation
 				'rectangle-orbit': 'rectanglePath 10s linear infinite',
 			},
 			keyframes: {
@@ -18,7 +34,6 @@ export default {
 					from: { transform: 'rotate(0deg)' },
 					to: { transform: 'rotate(-360deg)' },
 				},
-				// ✅ NEW keyframe
 				rectanglePath: {
 					'0%': { transform: 'translate(0, 0)' },
 					'25%': { transform: 'translate(200px, 0)' },
@@ -32,6 +47,14 @@ export default {
 				},
 				animation: {
 					slideIn: 'slideIn 0.8s ease forwards',
+				},
+				beamAnim: {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' },
+				},
+				scanAnim: {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' },
 				},
 			},
 

@@ -4,23 +4,30 @@ import ScrollDownButton from "../ui/Scrollbutton";
 import { DownloadIcon } from "lucide-react";
 import Lottie from "lottie-react";
 import devAnimation from "../../assets/animations/dev-animation.json";
-import { motion } from "framer-motion"; // ✅ import motion
+import { motion } from "framer-motion";
+import DarkMode from "../theme/DarkMode";
+import DarkModeToggle from "../theme/DarkMode";
 
 const HomePage = () => {
     return (
-        <div className="relative flex w-full h-screen overflow-hidden transition-colors duration-300 bg-background">
-            {/* Left: Content */}
-            <div className="flex items-center w-1/2 h-full px-12">
-                <div className="flex flex-col justify-items-center-safe h-[50%] w-full ml-16 -mt-10">
+        <div className="relative flex flex-col-reverse w-full min-h-screen overflow-hidden transition-colors duration-300 lg:flex-row bg-background">
+            {/* Left Content */}
+            <DarkMode />
+            <div className="relative flex flex-col items-start justify-center w-full px-6 py-10 lg:w-1/2 sm:px-10 md:px-16 lg:py-0">
+                {/* Dark Mode Button for small screens */}
+                <div className="absolute z-50 block top-4 right-4 md:hidden">
+                    <DarkMode />
+                </div>
 
+                <div className="w-full mb-8">
                     {/* ✅ Animated Hello with SVG underline */}
-                    <h1 className="text-7xl lg:text-[150px] font-bold text-foreground leading-none relative">
+                    <h1 className=" flex text-[38px] sm:text-[46px] md:text-[56px] lg:text-[150px] font-bold text-foreground leading-none relative xxs:text-7xl xs:text-8xl xsm:text-9xl">
                         <span className="relative inline-block">
                             Hello
                             <svg
                                 viewBox="0 0 286 73"
                                 fill="none"
-                                className="absolute -left-2 -top-3 w-[220px] lg:w-[310px]"
+                                className="absolute xs:w-[200px] -left-2 -top-3 w-[160px] sm:w-[220px] lg:w-[310px] xsm:w-[255px] xsm:-top-4"
                             >
                                 <motion.path
                                     initial={{ pathLength: 0 }}
@@ -35,32 +42,36 @@ const HomePage = () => {
                         <span className="text-[#009E66]">.</span>
                     </h1>
 
-                    <div className="flex items-center gap-2 mb-2">
-                        <div className="w-19 mt-2 ml-3 h-[2px] bg-[#009E66]"></div>
-                        <h2 className="text-3xl font-semibold text-foreground">
+                    <div className="flex items-center mt-6 mb-2 xxs:mt-0 ">
+                        <div className="w-10 h-1 xxs:h-0.5 mt-1 bg-[#009E66] rotate-[180deg] " />
+                        <h2 className="ml-4 text-xl font-semibold xxs:ml-2 xxs:text-md xxs:font-normal sm:text-2xl md:text-3xl text-foreground">
                             I am Kamal Meena
                         </h2>
                     </div>
 
-                    <p className="mb-6 ml-2 text-lg text-muted-foreground">
+                    <p className="mb-6 ml-1 text-sm sm:text-base md:text-lg text-muted-foreground">
                         Full Stack Web Developer
                     </p>
 
-                    <button className="bg-[#009E66] text-white font-semibold ml-2 w-[200px] h-[40px] flex items-center justify-center gap-2 transition duration-200">
-                        <DownloadIcon />
-                        Download CV
-                    </button>
+                    <div className="flex justify-between mt-2">
+                        <button className="bg-[#009E66] text-white font-semibold ml-1 w-[200px] h-[40px] flex items-center justify-center gap-2 transition duration-200 xxs:w-[150px] xxs:text-xs">
+                            <DownloadIcon className="xxs:h-5 xxs:w-5" />
+                            Download CV
+                        </button>
 
-                    <ScrollDownButton />
+                        <div className="w-fit">
+                            <ScrollDownButton className="xxs:h-5 xxs:w-5" />
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            {/* Right: Animation */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center w-full px-4 h-[300px] sm:h-[350px] md:h-[400px] lg:h-auto lg:w-full lg:px-10 lg:pb-0  ">
+
                 <Lottie
                     animationData={devAnimation}
                     loop
-                    className="object-contain w-full h-full -mt-20"
+                    className="w-[90%] xxs:w-[100%] sm:w-[75%] md:w-[65%] lg:w-full "
                 />
             </div>
         </div>

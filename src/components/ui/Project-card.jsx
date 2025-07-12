@@ -7,24 +7,24 @@ const ProjectCard = ({ project, index }) => {
     return (
         <div className="w-full">
             <div
-                className={`flex flex-col lg:flex-row items-center gap-8 w-full max-w-6xl px-6 py-8 mx-auto border rounded-2xl bg-white dark:bg-[#333333] shadow-lg 
-                ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-                style={{ height: '60vh' }}
+                className={`flex flex-col-reverse lg:flex-row items-center gap-8 w-full max-w-6xl px-4 sm:px-6 py-6 sm:py-8 mx-auto border rounded-2xl bg-white dark:bg-[#333333] shadow-lg
+        ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
 
+
                 {/* Project Info */}
-                <div className="flex-1 max-h-full pr-2 space-y-4 overflow-auto">
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{project.title}</h2>
-                    <h3 className="text-lg text-[#484848] dark:text-gray-400">{project.subtitle}</h3>
-                    <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                <div className="flex-1 max-h-full pr-2 space-y-4 overflow-auto xxs:space-y-2">
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white xxs:text-xl">{project.title}</h2>
+                    <h3 className="text-lg text-[#484848] dark:text-gray-400 xxs:text-sm ">{project.subtitle}</h3>
+                    <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 xxs:text-sm">
                         {project.description}
                     </p>
 
                     <div>
-                        <h4 className="mb-2 text-md font-semibold text-[#009E66] dark:text-[#009E66]">
+                        <h4 className="mb-2 text-md font-semibold text-[#009E66] dark:text-[#009E66] xxs:text-md">
                             Key Features:
                         </h4>
-                        <ul className="space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">
+                        <ul className="space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400 xxs:text-sm">
                             {project.highlights.map((item, idx) => (
                                 <li key={idx}>{item}</li>
                             ))}
@@ -35,7 +35,7 @@ const ProjectCard = ({ project, index }) => {
                         {project.techStack.map((tech, idx) => (
                             <span
                                 key={idx}
-                                className=" flex text-center justify-center items-center px-3 py-1 text-sm font-medium text-white bg-[#009E66] rounded-full dark:bg-[#009E66]"
+                                className=" flex text-center justify-center items-center px-3 py-1 text-sm font-medium text-white bg-[#009E66] rounded-full dark:bg-[#009E66] xxs:text-[12px]"
                             >
                                 {tech}
                             </span>
@@ -68,28 +68,29 @@ const ProjectCard = ({ project, index }) => {
                 </div>
 
                 {/* Laptop Mockup with Image Slider */}
-                <div className="flex-1 max-w-md mx-auto">
-                    <div className="w-[420px] h-[280px] rounded-lg overflow-hidden  dark:bg-[#1f2937] shadow-md">
-                        <Swiper
-                            modules={[Autoplay]}
-                            autoplay={{ delay: 2500, disableOnInteraction: false }}
-                            loop={true}
-                            className="w-full h-full"
-                        >
-                            {project.images.map((img, idx) => (
-                                <SwiperSlide key={idx}>
-                                    <div className="flex items-center justify-center w-full h-full">
-                                        <img
-                                            src={img}
-                                            alt={`${project.title} screenshot ${idx}`}
-                                            className="object-contain w-full h-full"
-                                        />
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </div>
+                {/* <div className="flex justify-center w-full bg-red-500"> */}
+                <div className="w-full aspect-video max-w-[420px] rounded-lg overflow-hidden dark:bg-[#1f2937] shadow-md">
+
+                    <Swiper
+                        modules={[Autoplay]}
+                        autoplay={{ delay: 2500, disableOnInteraction: false }}
+                        loop={true}
+                        className="w-full h-full "
+                    >
+                        {project.images.map((img, idx) => (
+                            <SwiperSlide key={idx}>
+                                <div className="flex items-center justify-center w-full h-full ">
+                                    <img
+                                        src={img}
+                                        alt={`${project.title} screenshot ${idx}`}
+                                        className="object-contain w-full h-full"
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
+                {/* </div> */}
 
 
             </div>

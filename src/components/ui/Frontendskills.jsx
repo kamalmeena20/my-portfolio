@@ -20,16 +20,33 @@ import {
 import { cn } from "../../lib/utils";
 
 export const Frontendskills = () => {
-  const radius = 180;
-  const size = 60;
-  const padding = 40;
+  // Responsive radius/size/padding settings
+  const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 1024;
+
+  let radius = 130;
+  let size = 50;
+  let padding = 30;
+
+  if (screenWidth <= 320) {
+    radius = 110;
+    size = 30;
+    padding = 20;
+  } else if (screenWidth <= 412) {
+    radius = 115;
+    size = 30;
+    padding = 40;
+  } else if (screenWidth <= 520) {
+    radius = 115;
+    size = 30;
+    padding = 40;
+  }
 
   const toRadians = (deg) => (Math.PI / 180) * deg;
 
   const logos = [
     {
       Icon: FaJs,
-      className: "bg-[#F7DF1E] text-black", // JavaScript
+      className: "bg-[#F7DF1E] text-black",
       name: "JavaScript",
     },
     {
@@ -70,13 +87,13 @@ export const Frontendskills = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center overflow-hidden">
+    <div className="flex items-center justify-center px-2 overflow-hidden xxs:px-4">
       <div
         style={{
           width: radius * 2 + size + padding,
           height: radius * 2 + size + padding,
         }}
-        className="relative rounded-full "
+        className="relative rounded-full max-w-[320px] xxs:max-w-[360px] xs:max-w-[400px] xsm:max-w-[440px] sm:max-w-none"
       >
         <div className="absolute inset-0 animate-spin-slow">
           {logos.map((logo, index) => {
@@ -98,14 +115,15 @@ export const Frontendskills = () => {
                   logo.className
                 )}
               >
-                <logo.Icon className="w-6 h-6" />
+                <logo.Icon className="w-5 h-5 xxs:w-4 xxs:h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6" />
               </div>
             );
           })}
         </div>
+
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex items-center justify-center w-1/2 border-2 rounded-full shadow-inner h-1/2 bg-background border-border">
-            <span className="px-4 text-2xl text-center sm:text-3xl text-foreground">
+          <div className="flex items-center justify-center xxs:w-[100px] xxs:h-[100px] xs:w-[120px] xs:h-[120px] border-2 rounded-full shadow-inner  ">
+            <span className=" text-xl text-center xxs:font-semibold tracking-wider xxs:text-[15px] xs:text-lg sm:text-xl text-foreground">
               FRONTEND
             </span>
           </div>
@@ -114,3 +132,4 @@ export const Frontendskills = () => {
     </div>
   );
 };
+

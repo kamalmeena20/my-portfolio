@@ -4,7 +4,7 @@ export const portfolioData = {
         title: "Full Stack Developer",
         location: "Jaipur, India",
         email: "officalkamalmeena2005@gmail.com",
-        phone: "+91 ",
+        phone: "+91 9680477712",
         summary: "Passionate full-stack developer with 5+ years of experience building modern web applications. I love creating user-friendly solutions and working with cutting-edge technologies."
     },
     skills: {
@@ -62,47 +62,46 @@ export const portfolioData = {
             ]
         }
     ],
-    education: [
-        {
+    education: {
+        college: {
             degree: "Bachelor of Technology in Computer Science and Engineering",
-            institution: "Indian Institute of Infromation technology Vadodara",
+            institution: "Indian Institute of Information Technology Vadodara",
             year: "2022",
             details: "Graduated with honors, specialized in Computer Science and Engineering"
+        },
+        school: {
+            level: "Senior Secondary (Class 12th - CBSE)",
+            institution: "Jawahar Navodaya Vidyalaya, Dungarpur",
+            year: "2018",
+            details: "Focused on PCM (Physics, Chemistry, Math) with Computer Science as an additional subject."
         }
-    ],
+    },
+
     socialMedia: {
         github: "https://github.com/yourusername",
         linkedin: "https://linkedin.com/in/yourprofile",
         twitter: "https://twitter.com/yourusername",
         portfolio: "https://yourportfolio.com"
     },
-    testimonials: [
-        {
-            name: "John Smith",
-            position: "Project Manager",
-            company: "Tech Innovations Inc.",
-            feedback: "Outstanding developer with excellent problem-solving skills and great team collaboration."
-        },
-        {
-            name: "Sarah Johnson",
-            position: "CEO",
-            company: "Digital Solutions Ltd.",
-            feedback: "Delivered high-quality solutions consistently and exceeded expectations on every project."
-        }
-    ],
-    services: [
-        "Full Stack Web Development",
-        "Frontend Development (React, Vue, Angular)",
-        "Backend Development (Node.js, Python)",
-        "Database Design & Optimization",
-        "API Development & Integration",
-        "Cloud Deployment & DevOps",
-        "Code Review & Consulting",
-        "Technical Mentoring"
-    ],
     availability: {
         status: "Open to new opportunities",
         preferredContact: "Email or LinkedIn",
         responseTime: "Usually respond within 24 hours"
+    },
+    currentStatus: {
+        timezoneOffset: 330, // IST (UTC+5:30) in minutes
+        routine: [
+            { from: 23, to: 7, activity: "sleeping 😴" },
+            { from: 7, to: 8, activity: "just woke up and getting ready for the day" },
+            { from: 8, to: 9, activity: "having breakfast in the mess 🍽️" },
+            { from: 9, to: 12, activity: "attending classes 📚" },
+            { from: 12, to: 14, activity: "having lunch 🍛" },
+            { from: 14, to: 17, activity: "attending lab sessions 🔬" },
+            { from: 17, to: 20, activity: "at the gym 🏋️" },
+            { from: 20, to: 22, activity: "having dinner 🍽️" },
+            { from: 22, to: 23, activity: "winding down and wrapping up the day" }
+        ],
+        noGymOnSunday: true
     }
+
 };

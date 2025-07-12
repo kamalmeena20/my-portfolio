@@ -28,7 +28,7 @@ const ScrollDownButton = () => {
     return (
         <button
             onClick={handleClick}
-            className={`flex bottom-6 justify-end left-6 z-50 transition-all duration-[800ms] transform
+            className={` z-50 transition-all duration-[800ms] transform
                 ${hide ? "scale-0 opacity-0" : "scale-100 opacity-100"}
             `}
         >
