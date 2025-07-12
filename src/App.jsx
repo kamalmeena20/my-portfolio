@@ -13,7 +13,7 @@ const Contact = lazy(() => import("./components/contact/Contact"));
 const Testimonials = lazy(() => import("./components/testimonials/Testimonals"));
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 3000);
