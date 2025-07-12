@@ -3,7 +3,7 @@ import { MessageCircle, X, Send, User } from 'lucide-react';
 import radhe from '../../assets/images/profile.jpg';
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
-import { ScrollArea } from '../../components/ui/scroll-area';
+import { ScrollArea } from '../../components/ui/Scroll-area';
 import { cn } from '../../lib/utils';
 import { chatbotAI } from '../../utils/chatBotAI';
 
