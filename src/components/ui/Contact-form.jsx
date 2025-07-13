@@ -33,10 +33,10 @@ const ContactForm = ({ isOpen, onClose }) => {
 
         toast.promise(
             emailjs.sendForm(
-                'service_ewfw0i9',        // ✅ your EmailJS Service ID
-                'template_p8xhs98',       // ✅ your Template ID
+                'service_ewfw0i9',
+                'template_p8xhs98',
                 formRef.current,
-                'M4hcDLgyDqRuB7ZtG'       // ✅ your Public Key
+                'M4hcDLgyDqRuB7ZtG'
             ),
             {
                 loading: 'Sending message...',
@@ -112,50 +112,83 @@ const ContactForm = ({ isOpen, onClose }) => {
                             </div>
 
                             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                                {/* Name + Email in 2 Columns */}
                                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                                    <InputField
-                                        label="Full Name"
-                                        name="from_name"
-                                        value={formData.from_name}
+                                    {/* Full Name */}
+                                    <div className="flex flex-col gap-1">
+                                        <label htmlFor="from_name" className="text-sm font-medium">
+                                            Full Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="from_name"
+                                            id="from_name"
+                                            value={formData.from_name}
+                                            onChange={handleInputChange}
+                                            placeholder="Name"
+                                            className="w-full px-3 py-2 text-black border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
+                                        />
+                                    </div>
+
+                                    {/* Email */}
+                                    <div className="flex flex-col gap-1">
+                                        <label htmlFor="user_email" className="text-sm font-medium">
+                                            Email Address
+                                        </label>
+                                        <input
+                                            type="email"
+                                            name="user_email"
+                                            id="user_email"
+                                            value={formData.user_email}
+                                            onChange={handleInputChange}
+                                            placeholder="Email"
+                                            className="w-full px-3 py-2 text-black border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Subject */}
+                                <div className="flex flex-col gap-1">
+                                    <label htmlFor="subject" className="text-sm font-medium">
+                                        Subject
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="subject"
+                                        id="subject"
+                                        value={formData.subject}
                                         onChange={handleInputChange}
-                                        placeholder="Name"
-                                    />
-                                    <InputField
-                                        label="Email Address"
-                                        name="user_email"
-                                        type="email"
-                                        value={formData.user_email}
-                                        onChange={handleInputChange}
-                                        placeholder="Email"
+                                        placeholder="Subject"
+                                        className="w-full px-3 py-2 text-black border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
                                     />
                                 </div>
-                                <InputField
-                                    label="Subject"
-                                    name="subject"
-                                    value={formData.subject}
-                                    onChange={handleInputChange}
-                                    placeholder="Subject"
-                                />
-                                <div>
-                                    <label className="block text-sm font-medium">Message</label>
+
+                                {/* Message */}
+                                <div className="flex flex-col gap-1">
+                                    <label htmlFor="message" className="text-sm font-medium">
+                                        Message
+                                    </label>
                                     <textarea
                                         name="message"
+                                        id="message"
                                         value={formData.message}
                                         onChange={handleInputChange}
                                         rows="5"
                                         placeholder="Write your message..."
-                                        className="w-full px-3 py-2 text-black border border-gray-300 resize-none focus:outline-none focus:ring-1 focus:ring-green-500"
+                                        className="w-full px-3 py-2 text-black border border-gray-300 rounded resize-none focus:outline-none focus:ring-1 focus:ring-green-500"
                                     />
                                 </div>
 
+                                {/* Submit Button */}
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className="px-6 py-2 border border-[#009e66] text-[#009e66] hover:bg-[#009e66] hover:text-white transition"
+                                    className="px-6 py-2 border border-[#009e66] text-[#009e66] hover:bg-[#009e66] hover:text-white transition rounded"
                                 >
                                     {loading ? 'Sending...' : 'Send Message'}
                                 </button>
                             </form>
+
                         </div>
                     </div>
                 )}
