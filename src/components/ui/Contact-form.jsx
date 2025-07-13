@@ -107,83 +107,96 @@ const ContactForm = ({ isOpen, onClose }) => {
                             )}
 
                             <div className="flex items-center justify-between mt-2 mb-6">
-                                <h2 className="text-2xl font-bold">Get in touch</h2>
+                                <h2 className="text-2xl font-bold text-black">Get in touch</h2>
                                 <button onClick={onClose} className="text-2xl text-gray-500 hover:text-gray-700">×</button>
                             </div>
 
                             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-                                {/* Name + Email in 2 Columns */}
                                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                                    {/* Full Name */}
-                                    <div className="flex flex-col gap-1">
-                                        <label htmlFor="from_name" className="text-sm font-medium">
+                                    <div className="flex flex-col items-start w-full gap-1">
+                                        <label
+                                            htmlFor="from_name"
+                                            className="text-sm font-medium text-black text-start"
+                                        >
                                             Full Name
                                         </label>
                                         <input
                                             type="text"
                                             name="from_name"
                                             id="from_name"
+                                            placeholder="Name"
                                             value={formData.from_name}
                                             onChange={handleInputChange}
-                                            placeholder="Name"
                                             className="w-full px-3 py-2 text-black border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
                                         />
                                     </div>
 
-                                    {/* Email */}
-                                    <div className="flex flex-col gap-1">
-                                        <label htmlFor="user_email" className="text-sm font-medium">
+
+                                    <div className="flex flex-col items-start w-full gap-1">
+                                        <label
+                                            htmlFor="user_email"
+                                            className="text-sm font-medium text-black text-start"
+                                        >
                                             Email Address
                                         </label>
                                         <input
                                             type="email"
                                             name="user_email"
                                             id="user_email"
+                                            placeholder="Email"
                                             value={formData.user_email}
                                             onChange={handleInputChange}
-                                            placeholder="Email"
                                             className="w-full px-3 py-2 text-black border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
                                         />
                                     </div>
+
                                 </div>
 
                                 {/* Subject */}
-                                <div className="flex flex-col gap-1">
-                                    <label htmlFor="subject" className="text-sm font-medium">
+                                <div className="flex flex-col items-start w-full gap-1">
+                                    <label
+                                        htmlFor="subject"
+                                        className="text-sm font-medium text-black text-start"
+                                    >
                                         Subject
                                     </label>
                                     <input
                                         type="text"
                                         name="subject"
                                         id="subject"
+                                        placeholder="Subject"
                                         value={formData.subject}
                                         onChange={handleInputChange}
-                                        placeholder="Subject"
                                         className="w-full px-3 py-2 text-black border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
                                     />
                                 </div>
 
+
                                 {/* Message */}
-                                <div className="flex flex-col gap-1">
-                                    <label htmlFor="message" className="text-sm font-medium">
+                                <div className="flex flex-col items-start w-full gap-1">
+                                    <label
+                                        htmlFor="message"
+                                        className="text-sm font-medium text-black text-start"
+                                    >
                                         Message
                                     </label>
                                     <textarea
                                         name="message"
                                         id="message"
+                                        placeholder="Write your message..."
                                         value={formData.message}
                                         onChange={handleInputChange}
                                         rows="5"
-                                        placeholder="Write your message..."
                                         className="w-full px-3 py-2 text-black border border-gray-300 rounded resize-none focus:outline-none focus:ring-1 focus:ring-green-500"
                                     />
                                 </div>
+
 
                                 {/* Submit Button */}
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className="px-6 py-2 border border-[#009e66] text-[#009e66] hover:bg-[#009e66] hover:text-white transition rounded"
+                                    className="px-6 py-2 border border-[#009e66] text-[#009e66] hover:bg-[#009e66] hover:text-white transition "
                                 >
                                     {loading ? 'Sending...' : 'Send Message'}
                                 </button>
