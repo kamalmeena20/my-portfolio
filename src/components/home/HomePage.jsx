@@ -6,7 +6,34 @@ import Lottie from "lottie-react";
 import devAnimation from "../../assets/animations/dev-animation.json";
 import { motion } from "framer-motion";
 import DarkMode from "../theme/DarkMode";
-import DarkModeToggle from "../theme/DarkMode";
+import KAMALMEENA from '../../assets/certificats/KAMALMEENA.pdf';
+
+const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: 'easeOut' }
+    }
+};
+
+const zoomIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.6, ease: 'easeOut' }
+    }
+};
+
+const staggerContainer = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+};
 
 const HomePage = () => {
     return (
@@ -19,9 +46,18 @@ const HomePage = () => {
                     <DarkMode />
                 </div>
 
-                <div className="w-full mb-8">
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.4 }}
+                    className="w-full mb-8"
+                >
                     {/* ✅ Animated Hello with SVG underline */}
-                    <h1 className=" flex text-[38px] sm:text-[46px] md:text-[56px] lg:text-[150px] font-bold text-foreground leading-none relative xxs:text-7xl xs:text-8xl xsm:text-9xl">
+                    <motion.h1
+                        variants={fadeInUp}
+                        className="flex text-[38px] sm:text-[46px] md:text-[56px] lg:text-[150px] font-bold text-foreground leading-none relative xxs:text-7xl xs:text-8xl xsm:text-9xl"
+                    >
                         <span className="relative inline-block">
                             Hello
                             <svg
@@ -40,40 +76,62 @@ const HomePage = () => {
                             </svg>
                         </span>
                         <span className="text-[#009E66]">.</span>
-                    </h1>
+                    </motion.h1>
 
-                    <div className="flex items-center mt-6 mb-2 xxs:mt-0 ">
-                        <div className="w-10 h-1 xxs:h-0.5 mt-1 bg-[#009E66] rotate-[180deg] " />
+                    <motion.div
+                        variants={fadeInUp}
+                        className="flex items-center mt-6 mb-2 xxs:mt-0"
+                    >
+                        <div className="w-10 h-1 xxs:h-0.5 mt-1 bg-[#009E66] rotate-[180deg]" />
                         <h2 className="ml-4 text-xl font-semibold xxs:ml-2 xxs:text-md xxs:font-normal sm:text-2xl md:text-3xl text-foreground">
                             I am Kamal Meena
                         </h2>
-                    </div>
+                    </motion.div>
 
-                    <p className="mb-6 ml-1 text-sm sm:text-base md:text-lg text-muted-foreground">
+                    <motion.p
+                        variants={fadeInUp}
+                        className="mb-6 ml-1 text-sm sm:text-base md:text-lg text-muted-foreground"
+                    >
                         Full Stack Web Developer
-                    </p>
+                    </motion.p>
 
-                    <div className="flex justify-between mt-2">
-                        <button className="bg-[#009E66] text-white font-semibold ml-1 w-[200px] h-[40px] flex items-center justify-center gap-2 transition duration-200 xxs:w-[150px] xxs:text-xs">
-                            <DownloadIcon className="xxs:h-5 xxs:w-5" />
+                    <motion.div
+                        variants={fadeInUp}
+                        className="flex justify-between mt-2"
+                    >
+                        {/* Download CV */}
+                        <a
+                            href={KAMALMEENA}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-[#009E66] text-white font-semibold ml-1 xl:w-[200px] h-[50px] flex items-center justify-center gap-2 transition duration-200 xxs:w-[150px] xxs:text-xs xl:text-[15px] tracking-wide"
+                        >
+                            <DownloadIcon className="xl:h-10 xl:w-15 xxs:h-5 xxs:w-5" />
                             Download CV
-                        </button>
+                        </a>
 
+                        {/* Scroll Down Button */}
                         <div className="w-fit">
                             <ScrollDownButton className="xxs:h-5 xxs:w-5" />
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
 
-            <div className="flex items-center justify-center w-full px-4 h-[300px] sm:h-[350px] md:h-[400px] lg:h-auto lg:w-full lg:px-10 lg:pb-0  ">
-
+            {/* Lottie Animation Right Side */}
+            <motion.div
+                variants={zoomIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
+                className="flex items-center justify-center w-full px-4 h-[300px] sm:h-[350px] md:h-[400px] lg:h-auto lg:w-full lg:px-10 lg:pb-0"
+            >
                 <Lottie
                     animationData={devAnimation}
                     loop
-                    className="w-[90%] xxs:w-[100%] sm:w-[75%] md:w-[65%] lg:w-full "
+                    className="w-[90%] xxs:w-[100%] sm:w-[75%] md:w-[65%] lg:w-full"
                 />
-            </div>
+            </motion.div>
         </div>
     );
 };

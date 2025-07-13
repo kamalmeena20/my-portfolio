@@ -15,7 +15,7 @@ const Experience = () => {
                 <div
                     className="
                         w-full
-                        bg-red-500 
+                       
                         flex flex-col lg:flex-row 
                         gap-6 
                         max-h-[75vh] 

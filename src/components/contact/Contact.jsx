@@ -23,10 +23,15 @@ const ContactPage = () => {
 
             <button
                 onClick={openForm}
-                className="px-8 py-3 font-medium text-white border border-[#009e66]"
+                className="relative overflow-hidden px-8 py-3 font-medium text-[#009e66] border border-[#009e66] bg-transparent hover:bg-[#009e66] hover:text-white transition duration-300"
             >
-                Get in Touch
+                <span className="relative z-10">Get in Touch</span>
+
+                {/* Beam scan line */}
+                <span className="absolute top-0 left-[-150%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-60 animate-beam pointer-events-none" />
             </button>
+
+
 
             <Clippath />
 

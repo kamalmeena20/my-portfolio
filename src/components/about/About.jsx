@@ -1,17 +1,13 @@
 import { DownloadIcon } from "lucide-react";
 import profileImg from '../../assets/images/profileimg.jpg';
 import { useState } from "react";
+import KAMALMEENA from '../../assets/certificats/KAMALMEENA.pdf'
 
 const AboutPage = () => {
     const [showFullText, setShowFullText] = useState(false);
 
     const fullText = `
-    Crafting innovative UI/UX designs that merge creativity with functionality.
-    Skilled in Figma and Adobe XD, I create seamless, user-friendly interfaces.
-    Focused on enhancing collaboration and delivering impactful, intuitive design
-    solutions. Let's connect to build exceptional user experiences!
-    I continuously refine designs through user feedback and accessibility guidelines
-    to ensure each project serves its audience effectively and creatively.
+    I’m Kamal Meena, a final-year CSE student at IIITV-ICD’26 — someone who doesn't just write code, but constantly questions how systems work, scale, and break. My core lies in Full Stack Web Development, but my curiosity dives deeper into system design thinking, exploring how architecture, performance, and clean abstraction shape real-world software. I build with React, Next.js, Node.js, MongoDB, Convex, TypeScript, and Tailwind — but for me, tools are just surface-level. What truly drives me is applying SOLID principles, identifying design patterns, and writing logic that respects structure, scalability, and speed. My grounding in data structures, algorithms, and deep dives into DBMS, operating systems, and computer networks lets me bridge practical development with foundational insight. As a Core Member in MLSA and a creative lead in team initiatives, I believe in building systems — not just features — and stories users can feel, not just use.
   `;
 
     const maxChars = 280; // Adjust based on layout
@@ -100,7 +96,7 @@ const AboutPage = () => {
 
                         {/* Download CV Button */}
                         <a
-                            href="/Kamal_Meena_CV.pdf"
+                            href={KAMALMEENA}
                             download
                             className="bg-[#009E66] text-white font-semibold mt-2 px-6 py-2 sm:px-8 sm:py-3 transition-colors duration-200 flex items-center space-x-2 hover:bg-[#007f53]"
                         >
