@@ -4,9 +4,6 @@ import Loader from "./components/ui/Loader";
 import Navbar from "./components/navbar/Navbar";
 import ChatBot from "./components/chat/Chat-bot";
 import Experience from "./components/experience/Experience";
-import ParticlesBackground from "./components/ui/ParticleBackground";
-import AnimatedCursor from "./components/ui/Cursor";
-import MagneticCursor from "./components/ui/Cursor";
 
 const HomePage = lazy(() => import("./components/home/HomePage"));
 const AboutPage = lazy(() => import("./components/about/About"));
@@ -28,12 +25,9 @@ function App() {
 
   return (
     <div className="w-full min-h-screen overflow-x-hidden bg-background text-foreground">
-      <MagneticCursor />
-      {/* <ParticlesBackground /> */}
       <Toaster
         position="top-center"
         toastOptions={{
-          // Global Default Styles
           style: {
             background: '#009e66',
             color: '#ffffff',
