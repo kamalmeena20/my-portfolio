@@ -80,7 +80,7 @@ const SlideTabs = () => {
                     opacity: 0,
                 }))
             }
-            className="relative flex p-1 border rounded-full border-foreground"
+            className="relative flex p-1 border rounded-full border-foreground mmd:bg-red-500"
         >
             <Tab to="#home" setPosition={setPosition}>Home</Tab>
             <Tab to="#about" setPosition={setPosition}>About</Tab>
@@ -112,7 +112,7 @@ const Tab = ({ children, setPosition, to }) => {
         >
             <a
                 href={to}
-                className="block px-3 py-2 text-sm tracking-wide uppercase transition-colors text-foreground hover:text-[#009e66] md:px-5 md:py-3 md:text-base"
+                className="flex px-3 py-2 text-sm tracking-wide uppercase transition-colors text-foreground hover:text-[#009e66] md:px-3 md:py-2 md:text-base "
             >
                 {children}
             </a>

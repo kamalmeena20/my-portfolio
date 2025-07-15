@@ -11,6 +11,7 @@ export default {
 				'xxs': '320px',
 				'xs': '412px',
 				'xsm': '512px',
+				'mmd': '820px'
 			},
 			fontFamily: {
 				dalton: ['DaltonWhite', 'cursive'],

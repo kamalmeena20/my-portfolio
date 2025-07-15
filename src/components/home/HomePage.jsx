@@ -40,7 +40,8 @@ const HomePage = () => {
         <div className="relative flex flex-col-reverse w-full min-h-screen overflow-hidden transition-colors duration-300 lg:flex-row bg-background">
             {/* Left Content */}
             <DarkMode />
-            <div className="relative flex flex-col items-start justify-center w-full px-6 py-10 lg:w-1/2 sm:px-10 md:px-16 lg:py-0">
+            <div className="relative flex flex-col items-start justify-center w-full px-6 py-10 lg:w-1/2 sm:px-10 md:px-10 lg:py-0 md:py-8 md:justify-center">
+
                 {/* Dark Mode Button for small screens */}
                 <div className="absolute z-50 block top-4 right-4 md:hidden">
                     <DarkMode />
@@ -51,19 +52,19 @@ const HomePage = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.4 }}
-                    className="w-full mb-8"
+                    className="w-full"
                 >
                     {/* ✅ Animated Hello with SVG underline */}
                     <motion.h1
                         variants={fadeInUp}
-                        className="flex text-[38px] sm:text-[46px] md:text-[56px] lg:text-[150px] font-bold text-foreground leading-none relative xxs:text-7xl xs:text-8xl xsm:text-9xl"
+                        className="flex text-[38px] sm:text-[46px] md:text-[150px] lg:text-[150px] font-bold text-foreground leading-none relative xxs:text-7xl xs:text-8xl xsm:text-9xl"
                     >
                         <span className="relative inline-block">
                             Hello
                             <svg
                                 viewBox="0 0 286 73"
                                 fill="none"
-                                className="absolute xs:w-[200px] -left-2 -top-3 w-[160px] sm:w-[220px] lg:w-[310px] xsm:w-[255px] xsm:-top-4"
+                                className="absolute xs:w-[200px] -left-2 -top-3 w-[160px] sm:w-[220px] lg:w-[310px] xsm:w-[255px] xsm:-top-4 md:-w-[800px] "
                             >
                                 <motion.path
                                     initial={{ pathLength: 0 }}
@@ -104,11 +105,13 @@ const HomePage = () => {
                             href={KAMALMEENA}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-[#009E66] text-white font-semibold ml-1 xl:w-[200px] h-[50px] flex items-center justify-center gap-2 transition duration-200 xxs:w-[150px] xxs:text-xs xl:text-[15px] tracking-wide"
+                            className="bg-[#009E66] text-white ml-1 xl:w-[200px] h-[50px] flex items-center justify-center gap-2 transition duration-200 xxs:w-[150px] xxs:text-xs xl:text-[15px] tracking-wide font-semibold"
                         >
                             <DownloadIcon className="xl:h-10 xl:w-15 xxs:h-5 xxs:w-5" />
-                            Download CV
+                            <span className="block xxs:hidden sm:inline">Download Resume</span>
+                            <span className="hidden xxs:inline sm:hidden">Resume</span>
                         </a>
+
 
                         {/* Scroll Down Button */}
                         <div className="w-fit">
@@ -118,20 +121,20 @@ const HomePage = () => {
                 </motion.div>
             </div>
 
-            {/* Lottie Animation Right Side */}
             <motion.div
                 variants={zoomIn}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.4 }}
-                className="flex items-center justify-center w-full px-4 h-[300px] sm:h-[350px] md:h-[400px] lg:h-auto lg:w-full lg:px-10 lg:pb-0"
+                className="flex items-start justify-start w-full lg:w-1/2 md:pt-4 md:pb-2 md:px-4 md:h-auto"
             >
                 <Lottie
                     animationData={devAnimation}
                     loop
-                    className="w-[90%] xxs:w-[100%] sm:w-[75%] md:w-[65%] lg:w-full"
+                    className="w-[90%] sm:w-[75%] md:w-[95%] lg:w-full"
                 />
             </motion.div>
+
         </div>
     );
 };
