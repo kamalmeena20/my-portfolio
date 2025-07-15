@@ -1,51 +1,50 @@
-import React, { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { testimonialData } from "../../data/testimonalData";
+import React from "react";
+import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-const TestimonialSlider = () => {
-    const scrollRef = useRef(null);
-
-    const scrollLeft = () => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: -400, behavior: "smooth" });
-        }
-    };
-
-    const scrollRight = () => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: 400, behavior: "smooth" });
-        }
-    };
-
+const TestimonialCard = ({ name, position, description, image, linkedin, email }) => {
     return (
-        <div className="relative w-full">
-            {/* Left Arrow - only visible on md and above */}
-            <button
-                onClick={scrollLeft}
-                className="hidden md:flex items-center justify-center absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white text-[#009E66] rounded-full shadow hover:bg-gray-100"
-            >
-                <ChevronLeft size={20} />
-            </button>
+        <div className="relative w-full max-w-sm sm:max-w-md lg:w-[400px] p-4 rounded-lg bg-[#009E66] shadow-md flex flex-col justify-between h-[220px] sm:h-[200px] shrink-0">
+            {/* Social Icons */}
+            <div className="absolute flex space-x-2 top-3 right-4">
+                {linkedin && (
+                    <a
+                        href={linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-white transition rounded-full bg-white/20 hover:bg-white/30"
+                        title="LinkedIn"
+                    >
+                        <FaLinkedin size={16} />
+                    </a>
+                )}
+                {email && (
+                    <a
+                        href={`mailto:${email}`}
+                        className="p-2 text-white transition rounded-full bg-white/20 hover:bg-white/30"
+                        title="Email"
+                    >
+                        <FaEnvelope size={16} />
+                    </a>
+                )}
+            </div>
 
-            {/* Right Arrow - only visible on md and above */}
-            <button
-                onClick={scrollRight}
-                className="hidden md:flex items-center justify-center absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white text-[#009E66] rounded-full shadow hover:bg-gray-100"
-            >
-                <ChevronRight size={20} />
-            </button>
-
-            {/* Scrollable testimonial cards */}
-            <div
-                ref={scrollRef}
-                className="flex gap-4 px-6 overflow-x-auto scroll-smooth no-scrollbar"
-            >
-                {testimonialData.map((item, index) => (
-                    <TestimonialCard key={index} {...item} />
-                ))}
+            {/* Profile + Text */}
+            <div>
+                <div className="flex items-center mb-3">
+                    <img
+                        src={image}
+                        alt={name}
+                        className="object-cover w-10 h-10 mr-3 border border-white rounded-full sm:w-12 sm:h-12"
+                    />
+                    <div>
+                        <h4 className="text-sm font-semibold text-white sm:text-base">{name}</h4>
+                        <p className="text-[12px] sm:text-sm text-white tracking-wide">{position}</p>
+                    </div>
+                </div>
+                <p className="text-white text-[13px] sm:text-sm">{description}</p>
             </div>
         </div>
     );
 };
 
-export default TestimonialSlider;
+export default TestimonialCard;
