@@ -40,7 +40,7 @@ const HomePage = () => {
         <div className="relative flex flex-col-reverse w-full min-h-screen overflow-hidden transition-colors duration-300 lg:flex-row bg-background">
             {/* Left Content */}
             <DarkMode />
-            <div className="relative flex flex-col items-start justify-center w-full px-6 py-10 lg:w-1/2 sm:px-10 md:px-10 lg:py-0 md:py-8 md:justify-center">
+            <div className="relative flex flex-col items-start justify-center w-full px-6 py-10 ml-4 lg:w-1/2 sm:px-10 md:px-10 lg:py-0 md:py-8 md:justify-center">
 
                 {/* Dark Mode Button for small screens */}
                 <div className="absolute z-50 block top-4 right-4 md:hidden">

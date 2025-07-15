@@ -23,13 +23,13 @@ const Navbar = () => {
                         </span>
                     </div>
 
-                    {/* Desktop Tabs */}
-                    <div className="hidden md:block">
+                    {/* Desktop Tabs - only lg and above */}
+                    <div className="hidden lg:block">
                         <SlideTabs />
                     </div>
 
                     {/* Mobile Menu Toggle */}
-                    <div className="md:hidden">
+                    <div className="lg:hidden">
                         <button
                             onClick={() => setMobileMenuOpen((prev) => !prev)}
                             className="text-foreground focus:outline-none"
@@ -42,12 +42,20 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
                     <div className="fixed inset-0 z-40">
+                        {/* Backdrop */}
                         <div
                             className="absolute inset-0 backdrop-blur-sm bg-black/30 dark:bg-black/40"
                             onClick={() => setMobileMenuOpen(false)}
                         />
 
-                        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[90%] max-w-[320px] z-50 rounded-xl p-4 space-y-3 shadow-xl bg-background dark:bg-[#1a1a1a] text-center relative">
+                        {/* Slide-in menu */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: -20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            className="absolute top-20 left-1/4 -translate-x-1/2 w-[90%] max-w-[320px] z-50 rounded-xl p-4 space-y-3 shadow-xl bg-background dark:bg-[#1a1a1a] text-center relative"
+                        >
                             <button
                                 className="absolute top-1 right-10 text-2xl text-foreground hover:text-[#009e66] transition"
                                 onClick={() => setMobileMenuOpen(false)}
@@ -61,9 +69,10 @@ const Navbar = () => {
                             <MobileLink href="#projects" label="Projects" onClick={() => setMobileMenuOpen(false)} />
                             <MobileLink href="#certificate" label="Certificate" onClick={() => setMobileMenuOpen(false)} />
                             <MobileLink href="#contact" label="Contact" onClick={() => setMobileMenuOpen(false)} />
-                        </div>
+                        </motion.div>
                     </div>
                 )}
+
             </nav>
         </div>
     );
@@ -80,7 +89,7 @@ const SlideTabs = () => {
                     opacity: 0,
                 }))
             }
-            className="relative flex p-1 border rounded-full border-foreground mmd:bg-red-500"
+            className="relative hidden p-1 border rounded-full lg:flex border-foreground"
         >
             <Tab to="#home" setPosition={setPosition}>Home</Tab>
             <Tab to="#about" setPosition={setPosition}>About</Tab>
@@ -112,7 +121,7 @@ const Tab = ({ children, setPosition, to }) => {
         >
             <a
                 href={to}
-                className="flex px-3 py-2 text-sm tracking-wide uppercase transition-colors text-foreground hover:text-[#009e66] md:px-3 md:py-2 md:text-base "
+                className="flex px-4 py-2 text-sm font-medium tracking-wide uppercase transition-colors text-foreground hover:text-white lg:text-base xl:text-[16px] xl:px-6 xl:py-3"
             >
                 {children}
             </a>
@@ -125,7 +134,7 @@ const Cursor = ({ position }) => {
         <motion.li
             animate={{ ...position }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="absolute z-0 rounded-full h-7 md:h-12 bg-primary"
+            className="absolute z-0 rounded-full bg-[#009e66] h-[36px] lg:h-[42px] xl:h-[48px]"
         />
     );
 };

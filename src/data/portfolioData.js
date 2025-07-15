@@ -17,7 +17,7 @@ export const portfolioData = {
     },
     projects: [
         {
-            name: "E-commerce Platform",
+            name: "STAVYA",
             description: "A full-stack e-commerce solution with modern UI/UX, payment integration, and admin dashboard",
             technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
             features: ["User authentication", "Shopping cart", "Payment processing", "Order management", "Admin panel"],
