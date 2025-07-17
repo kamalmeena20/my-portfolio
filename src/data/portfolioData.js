@@ -18,25 +18,45 @@ export const portfolioData = {
     projects: [
         {
             name: "STAVYA",
-            description: "A full-stack e-commerce solution with modern UI/UX, payment integration, and admin dashboard",
+            description: "An official platform built for IIITV-ICD’s cultural fest to enhance student engagement, streamline registrations, and provide dynamic event access.",
             technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-            features: ["User authentication", "Shopping cart", "Payment processing", "Order management", "Admin panel"],
+            features: [
+                "Multi-day event schedule with real-time timing and venue updates",
+                "Interactive registration system with team formation and event tracking",
+                "Dynamic content rendering for cultural clubs and member roles",
+                "Role-based hierarchy display for committees and club structures",
+                "Smooth UI experience for participants, admins, and external colleges"
+            ],
+            status: "Completed"
+
+        },
+        {
+            name: "HODO (Hackathon Project)",
+            description: "A real-time social collaboration platform with modular architecture and location-aware interactions.",
+            technologies: ["Vue.js", "Express", "Socket.io", "MongoDB"],
+            features: [
+                "Real-time chat with WebSocket integration",
+                "Friend connections and profile personalization",
+                "Geolocation-based user discovery and interaction",
+                "Cloudinary integration for optimized image delivery",
+                "Modular components for scalable team collaboration"
+            ],
             status: "Completed"
         },
         {
-            name: "Task Management App",
-            description: "Collaborative project management tool with real-time updates and team collaboration features",
-            technologies: ["Vue.js", "Express", "Socket.io", "MongoDB"],
-            features: ["Real-time collaboration", "Task assignments", "Progress tracking", "File sharing"],
-            status: "In Progress"
-        },
-        {
-            name: "Data Analytics Dashboard",
-            description: "Interactive dashboard for data visualization and business intelligence",
+            name: "Nutrifit (HealthCare Web App)",
+            description: "A full-stack wellness platform for personalized diet, workouts, predictions, and doctor consultations.",
             technologies: ["React", "D3.js", "Python", "FastAPI"],
-            features: ["Interactive charts", "Data filtering", "Export functionality", "Real-time updates"],
+            features: [
+                "Tailored diet plans and structured workout modules with GIF guidance",
+                "Disease prediction system using health data analysis",
+                "Doctor booking system with online and offline modes",
+                "Interactive charts and dashboards for real-time health tracking",
+                "Data filtering, export options, and smart recommendation flows"
+            ],
             status: "Completed"
         }
+
     ],
     experience: [
         {
@@ -51,14 +71,17 @@ export const portfolioData = {
             ]
         },
         {
-            company: "Digital Solutions Ltd.",
-            position: "Full Stack Developer",
-            duration: "2020 - 2022",
+            company: "IIIT-Vadodara-ICD",
+            position: "UI/UX Lead in MLSA",
+            duration: "2022 - 2023",
             responsibilities: [
-                "Developed responsive web applications",
-                "Implemented RESTful APIs",
-                "Optimized database performance",
-                "Participated in code reviews"
+                "Led UI / UX design for MLSA events and community tools.",
+
+                "Created user- friendly interfaces using Figma and accessibility guidelines.",
+
+                "Collaborated with teams to deliver responsive, engaging digital experiences.",
+
+                "Conducted workshops, mentored peers, and promoted human- centered design thinking.",
             ]
         }
     ],
@@ -67,21 +90,21 @@ export const portfolioData = {
             degree: "Bachelor of Technology in Computer Science and Engineering",
             institution: "Indian Institute of Information Technology Vadodara",
             year: "2022",
-            details: "Graduated with honors, specialized in Computer Science and Engineering"
+            details: "Specialized in Computer Science and Engineering"
         },
         school: {
-            level: "Senior Secondary (Class 12th - CBSE)",
-            institution: "Jawahar Navodaya Vidyalaya, Dungarpur",
-            year: "2018",
+            level: "Senior Secondary (Class 12th - RBSE)",
+            institution: "Bright Sun Public School, Sawai MAdhopur",
+            year: "2022",
             details: "Focused on PCM (Physics, Chemistry, Math) with Computer Science as an additional subject."
         }
     },
 
     socialMedia: {
-        github: "https://github.com/yourusername",
-        linkedin: "https://linkedin.com/in/yourprofile",
-        twitter: "https://twitter.com/yourusername",
-        portfolio: "https://yourportfolio.com"
+        github: "https://github.com/kamalmeena20",
+        linkedin: "https://www.linkedin.com/in/kamal-meena-787706289/",
+        twitter: "https://x.com/imradhee__?t=66xuEj6WwqiXZ7cvtAVTLQ&s=09",
+        portfolio: "https://kamalmeena.vercel.app/"
     },
     availability: {
         status: "Open to new opportunities",
