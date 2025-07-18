@@ -108,8 +108,8 @@ const HomePage = () => {
                             className="bg-[#009E66] text-white ml-1 xl:w-[200px] h-[50px] flex items-center justify-center gap-2 transition duration-200 xxs:w-[150px] xxs:text-xs xl:text-[15px] tracking-wide font-semibold"
                         >
                             <DownloadIcon className="xl:h-10 xl:w-15 xxs:h-5 xxs:w-5" />
-                            <span className="block xxs:hidden sm:inline">Download Resume</span>
-                            <span className="hidden xxs:inline sm:hidden">Resume</span>
+                            <span className="block xxs:hidden sm:inline">Download CV</span>
+                            <span className="hidden xxs:inline sm:hidden">Download CV</span>
                         </a>
 
 
