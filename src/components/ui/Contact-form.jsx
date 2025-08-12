@@ -70,7 +70,7 @@ const ContactForm = ({ isOpen, onClose }) => {
                             <InfoItem icon={<MapPin size={18} />} text="Sawai Madhopur, Rajasthan" />
                             <InfoItem icon={<PhoneCallIcon size={18} />} text="+91 9680477712" />
                             <InfoItem icon={<MailIcon size={18} />} text="officalkamalmeena2005@gmail.com" />
-                            <InfoItem icon={<GlobeIcon size={18} />} text="yoursite.com" />
+
                         </div>
                         <button
                             onClick={() => setShowForm(true)}
@@ -90,8 +90,10 @@ const ContactForm = ({ isOpen, onClose }) => {
                                     <InfoItem icon={<MapPin size={18} />} text="Sawai Madhopur, Rajasthan" />
                                     <InfoItem icon={<PhoneCallIcon size={18} />} text="+91 9680477712" />
                                     <InfoItem icon={<MailIcon size={18} />} text="officalkamalmeena2005@gmail.com" />
-                                    <InfoItem icon={<GlobeIcon size={18} />} text="yoursite.com" />
-                                </div>
+<InfoItem
+  icon={<GlobeIcon size={18} />}
+  text={<a href="https://kamalmeena.vercel.app/" target="_blank" rel="noopener noreferrer">kamalMeena.com</a>}
+/>                                </div>
                             </div>
                         )}
 
